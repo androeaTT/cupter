@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<!-- Created with Cambalache 0.96.1 -->
+<cambalache-project version="0.96.0" target_tk="gtk-4.0">
+  <css filename="style.css" is_global="0"/>
+  <ui filename="homeEmpty.ui" sha256="19e8529c04d3b1d2d8e558b8662417aedffb0a1b644ae57227b47fe6d387cc14">
+    <css-provider>style.css</css-provider>
+  </ui>
+  <ui filename="homeNotEmpty.ui" sha256="d931654c2a903e67be50b8f8d12641ad70f3b6dbcf9529376914a3100e602df0">
+    <css-provider>style.css</css-provider>
+  </ui>
+  <ui filename="homeGameCard.ui" sha256="98165aff17fa91b74a95460580a60e3c30e614196f3f95e403429f27a07a0e60">
+    <css-provider>style.css</css-provider>
+  </ui>
+</cambalache-project>

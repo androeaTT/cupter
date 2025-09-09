@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <!-- interface-name cupter.ui -->
+  <!-- interface-copyright //    App for quick adding games shortcuts to menu and steam
+//    Copyright (C) 2025  androeaTT
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
+  <!-- interface-authors androeaTT -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.4"/>
+  <object class="AdwNavigationPage">
+    <child>
+      <object class="GtkCenterBox">
+        <child type="center">
+          <object class="GtkBox">
+            <property name="halign">center</property>
+            <property name="orientation">vertical</property>
+            <property name="spacing">17</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="GtkImage">
+                <property name="icon-name">view-grid-symbolic</property>
+                <property name="pixel-size">100</property>
+                <style>
+                  <class name="big-mid-icon"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">4</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="ellipsize">middle</property>
+                    <property name="justify">center</property>
+                    <property name="label">Here's empty for now</property>
+                    <style>
+                      <class name="big-mid-text"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="ellipsize">middle</property>
+                    <property name="justify">center</property>
+                    <property name="label">Let's add some shortcuts!</property>
+                    <property name="natural-wrap-mode">word</property>
+                    <style>
+                      <class name="small-mid-text"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="child">
+                  <object class="GtkBox">
+                    <property name="halign">center</property>
+                    <property name="spacing">4</property>
+                    <property name="visible">False</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="icon-name">tab-new</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Add </property>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <style>
+                  <class name="pill"/>
+                  <class name="suggested-action"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

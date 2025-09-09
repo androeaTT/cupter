@@ -1,0 +1,16 @@
+.big-mid-icon{
+	opacity: 0.5
+}
+.big-mid-text{
+	font-size: xx-large;
+	font-weight: 800;
+	min-width: 280px
+} 
+.grid-label{
+	font-size: large;
+	font-weight: 600;
+	
+}
+.grid-cell{
+	border-radius: 10px;
+}
