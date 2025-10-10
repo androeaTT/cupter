@@ -1,2 +1,2 @@
 # cupter
-App for managing shortcutrs in linux
+App for managing desktop entries in linux
