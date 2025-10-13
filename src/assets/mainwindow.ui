@@ -2,6 +2,187 @@
 <!-- Created with Cambalache 0.96.1 -->
 <interface>
   <!-- interface-name cupter.ui -->
+  <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.0"/>
-  <object class="AdwApplicationWindow" id="MainWindow"/>
+  <object class="AdwApplicationWindow" id="MainWindow">
+    <child>
+      <object class="GtkBox" id="WindowBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar" id="MainHeaderBar">
+            <property name="show-back-button">False</property>
+            <child type="title">
+              <object class="AdwViewSwitcher">
+                <property name="policy">wide</property>
+                <property name="stack">MainStack</property>
+              </object>
+            </child>
+            <child type="start">
+              <object class="GtkBox">
+                <property name="spacing">10</property>
+                <child type="start">
+                  <object class="GtkImage">
+                    <property name="icon-name">application-x-executable</property>
+                    <property name="margin-start">6</property>
+                    <style>
+                      <class name="lowres-icon"/>
+                      <class name="icon-dropshadow"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="icon-name">list-add</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child type="end">
+              <object class="GtkBox">
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkButton">
+                    <property name="icon-name">system-search</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton">
+                    <property name="icon-name">open-menu</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <style>
+              <class name="flat"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="AdwViewStack" id="MainStack">
+            <child>
+              <object class="AdwViewStackPage" id="FavoritesPage">
+                <property name="child">
+                  <object class="GtkBox" id="FavoritesBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="AdwClamp" id="FavoritessEmptyClamp">
+                        <property name="child">FavoritesStatus</property>
+                        <property name="maximum-size">470</property>
+                        <property name="overflow">hidden</property>
+                        <property name="vexpand">True</property>
+                        <child>
+                          <object class="AdwStatusPage" id="FavoritesStatus">
+                            <property name="child">
+                              <object class="GtkBox">
+                                <property name="halign">center</property>
+                                <property name="hexpand">True</property>
+                                <property name="spacing">14</property>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="label">Add custom</property>
+                                    <style>
+                                      <class name="opaque"/>
+                                      <class name="pill"/>
+                                      <class name="suggested-action"/>
+                                    </style>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkButton">
+                                    <property name="label">Browse All</property>
+                                    <style>
+                                      <class name="opaque"/>
+                                      <class name="pill"/>
+                                    </style>
+                                  </object>
+                                </child>
+                              </object>
+                            </property>
+                            <property name="description">Favorites page needs to store your's custom entries for quick managing. Your custom entries will automatically adds into this page. Also you can add any other entries to this page on the "All" page</property>
+                            <property name="icon-name">star-filled-rounded-symbolic</property>
+                            <property name="title">You haven't any favorites yet</property>
+                            <property name="vexpand">True</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwClamp" id="FavoritesClamp">
+                        <property name="visible">False</property>
+                        <child>
+                          <object class="GtkBox">
+                            <child>
+                              <object class="AdwStatusPage">
+                                <property name="child">
+                                  <object class="GtkListBox" id="FavoritesList">
+                                    <property name="selection-mode">browse</property>
+                                    <style>
+                                      <class name="boxed-list"/>
+                                    </style>
+                                  </object>
+                                </property>
+                                <property name="description">Your favorites entries</property>
+                                <property name="title">Favorites</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="icon-name">star-filled-rounded-symbolic</property>
+                <property name="name">favorites</property>
+                <property name="title">Favorites</property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwViewStackPage" id="AllPage">
+                <property name="child">
+                  <object class="GtkBox">
+                    <child>
+                      <object class="GtkCenterBox" id="AllLoadingPage">
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                        <child type="center">
+                          <object class="AdwSpinner"/>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwNavigationSplitView">
+                        <property name="visible">False</property>
+                        <child>
+                          <object class="AdwNavigationPage">
+                            <property name="child">
+                              <object class="GtkBox"/>
+                            </property>
+                            <property name="tag">all</property>
+                            <property name="title">All</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="AdwNavigationPage">
+                            <property name="child">
+                              <object class="GtkBox"/>
+                            </property>
+                            <property name="tag">games</property>
+                            <property name="title">Games</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="icon-name">list-compact-symbolic</property>
+                <property name="name">all</property>
+                <property name="title">All</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkListItem"/>
 </interface>

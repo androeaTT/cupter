@@ -29,7 +29,7 @@ int Application::Init (int argc, char** argv)
     m_GSettings = g_settings_new("io.github.androeat.cupter");
 
     return 0;
-}
+} 
 
 gboolean Application::onWindowClose(GtkWidget* widget, GdkEvent* event, gpointer user_data)
 {
@@ -39,19 +39,17 @@ gboolean Application::onWindowClose(GtkWidget* widget, GdkEvent* event, gpointer
     g_settings_set_int(settings, "window-width", gtk_widget_get_width(window));
     g_settings_set_int(settings, "window-height", gtk_widget_get_height(window));
 
-    return FALSE;
-}
+    return FALSE;  
+} 
 
 void Application::onAppActivate (AdwApplication* app, gpointer user_data)
 {
     auto builder = Gtk::Builder::create_from_resource ("/io/github/androeat/cupter/mainwindow.ui");
     Application::getApplication()->MainWindowSetup(builder);
 
-    Gtk::Label* label = new Gtk::Label();
-    adw_application_window_set_content( ADW_APPLICATION_WINDOW (Application::getApplication()->m_MainWindow), GTK_WIDGET (label->gobj()) );
     gtk_application_add_window( GTK_APPLICATION (Application::getApplication()->m_AdwApp), GTK_WINDOW( Application::getApplication()->m_MainWindow ));
 }
-
+ 
 void Application::MainWindowSetup(Glib::RefPtr<Gtk::Builder> builder) 
 {
     GtkBuilder* c_builder = GTK_BUILDER(builder->gobj());

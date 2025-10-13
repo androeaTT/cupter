@@ -2,5 +2,9 @@
 <gresources>
   <gresource prefix="/io/github/androeat/cupter/">
     <file>mainwindow.ui</file>
+    <file>listEntry.ui</file>
+    <file preprocess="xml-stripblanks">icons/list-compact-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/star-filled-rounded-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/right-smaller-symbolic.svg</file>
   </gresource>
-</gresources>
+</gresources> 

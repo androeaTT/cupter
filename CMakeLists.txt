@@ -10,7 +10,7 @@ find_program(GLIB_COMPILE_RESOURCES NAMES glib-compile-resources REQUIRED)
 find_program(GLIB_COMPILE_SCHEMAS NAMES glib-compile-schemas REQUIRED)
 
 # compile resources
-file(GLOB_RECURSE RESOURCE_SOURCES src/assets/*.ui src/assets/*.css)
+file(GLOB_RECURSE RESOURCE_SOURCES src/assets/*.ui src/assets/*.css src/assets/icons/*.svg)
 set(GRESOURCE_C io.github.androeat.cupter.resource.c)
 set(GRESOURCE_XML src/assets/gio/io.github.androeat.cupter.resource.xml)
 
