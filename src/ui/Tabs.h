@@ -1,6 +1,6 @@
 //  Cupter. Desktop entries manager
 //  Copyright (C) 2025  @androeaTT
-//  main.cpp
+//  Tabs.h 
 //  
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -15,9 +15,11 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-#include "Application.h"
 
-int main (int argc, char *argv[])
+class Tabs
 {
-      return Application::Run(argc, argv);
-}
+private:
+    /* data */
+public:
+    
+};

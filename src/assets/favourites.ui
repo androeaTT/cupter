@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.0"/>
+  <object class="AdwClamp" id="FavoritesClamp">
+    <property name="visible">False</property>
+    <child>
+      <object class="GtkBox">
+        <child>
+          <object class="AdwStatusPage">
+            <property name="child">
+              <object class="GtkListBox" id="FavoritesList">
+                <property name="selection-mode">browse</property>
+                <style>
+                  <class name="boxed-list"/>
+                </style>
+              </object>
+            </property>
+            <property name="description">Your favorites entries</property>
+            <property name="hexpand">True</property>
+            <property name="title">Favorites</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

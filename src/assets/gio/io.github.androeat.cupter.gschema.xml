@@ -11,5 +11,10 @@
       <summary>Window height</summary>
       <description>Nah-huh</description>
     </key>
+    <key name="window-height" type="i">
+      <default>660</default>
+      <summary>Window height</summary>
+      <description>Nah-huh</description>
+    </key>
   </schema>
 </schemalist>

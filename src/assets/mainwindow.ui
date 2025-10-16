@@ -4,6 +4,7 @@
   <!-- interface-name cupter.ui -->
   <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.0"/>
+  <requires lib="gio" version="2.0"/>
   <object class="AdwApplicationWindow" id="MainWindow">
     <child>
       <object class="GtkBox" id="WindowBox">
@@ -46,8 +47,43 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkButton">
+                  <object class="GtkMenuButton">
                     <property name="icon-name">open-menu</property>
+                    <property name="popover">
+                      <object class="GtkPopoverMenu">
+                        <property name="menu-model">
+                          <menu>
+                            <section>
+                              <item>
+                                <attribute name="action">importfile</attribute>
+                                <attribute name="action-namespace">topmenu</attribute>
+                                <attribute name="icon">folder-download-symbolic</attribute>
+                                <attribute name="label">Import .desktop file</attribute>
+                                <attribute name="target">importfile</attribute>
+                              </item>
+                            </section>
+                            <section>
+                              <item>
+                                <attribute name="action">prefs</attribute>
+                                <attribute name="action-namespace">topmenu</attribute>
+                                <attribute name="icon">preferences-system-symbolic</attribute>
+                                <attribute name="label">Preferences</attribute>
+                                <attribute name="target">prefs</attribute>
+                              </item>
+                            </section>
+                            <section>
+                              <item>
+                                <attribute name="action">about</attribute>
+                                <attribute name="action-namespace">topmenu</attribute>
+                                <attribute name="icon">help-about</attribute>
+                                <attribute name="label">About</attribute>
+                                <attribute name="target">about</attribute>
+                              </item>
+                            </section>
+                          </menu>
+                        </property>
+                      </object>
+                    </property>
                   </object>
                 </child>
               </object>
@@ -98,33 +134,10 @@
                                 </child>
                               </object>
                             </property>
-                            <property name="description">Favorites page needs to store your's custom entries for quick managing. Your custom entries will automatically adds into this page. Also you can add any other entries to this page on the "All" page</property>
+                            <property name="description">Favorites page needs to store your's entries for quick managing. Your custom entries will automatically adds into this page. Also you can add any other entries to this page on the "All" page</property>
                             <property name="icon-name">star-filled-rounded-symbolic</property>
                             <property name="title">You haven't any favorites yet</property>
                             <property name="vexpand">True</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="AdwClamp" id="FavoritesClamp">
-                        <property name="visible">False</property>
-                        <child>
-                          <object class="GtkBox">
-                            <child>
-                              <object class="AdwStatusPage">
-                                <property name="child">
-                                  <object class="GtkListBox" id="FavoritesList">
-                                    <property name="selection-mode">browse</property>
-                                    <style>
-                                      <class name="boxed-list"/>
-                                    </style>
-                                  </object>
-                                </property>
-                                <property name="description">Your favorites entries</property>
-                                <property name="title">Favorites</property>
-                              </object>
-                            </child>
                           </object>
                         </child>
                       </object>
@@ -150,27 +163,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="AdwNavigationSplitView">
-                        <property name="visible">False</property>
-                        <child>
-                          <object class="AdwNavigationPage">
-                            <property name="child">
-                              <object class="GtkBox"/>
-                            </property>
-                            <property name="tag">all</property>
-                            <property name="title">All</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="AdwNavigationPage">
-                            <property name="child">
-                              <object class="GtkBox"/>
-                            </property>
-                            <property name="tag">games</property>
-                            <property name="title">Games</property>
-                          </object>
-                        </child>
-                      </object>
+                      <object class="GtkListView"/>
                     </child>
                   </object>
                 </property>
