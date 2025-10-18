@@ -1,7 +1,7 @@
-//  Cupter. Desktop entries manager
+//  Cupter. Desktop entries files manager
 //  Copyright (C) 2025  @androeaTT
-//  Tabs.h 
-//  
+//  MainNavView.h
+//
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
 //  the Free Software Foundation, either version 3 of the License, or
@@ -14,12 +14,24 @@
 //  
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#pragma once
 
+#include <gtkmm-4.0/gtkmm.h>
+#include <adwaita.h>
+#include "MainPage.h"
 
-class Tabs
+class MainNavView
 {
 private:
-    /* data */
+    static MainNavView* s_Instance;
+
+    GtkWidget* m_Widget;
+    MainPage* m_MainPage;
 public:
-    
+    static MainNavView* getMainNavView();
+
+    MainNavView();
+    ~MainNavView();
+    GtkWidget* getWidget();
 };
+

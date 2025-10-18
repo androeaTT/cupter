@@ -16,13 +16,7 @@
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #include "Application.h"
-#include <CLI/CLI.hpp>
-#include <string>
-#include <iostream>
-#include <gtkmm-4.0/gtkmm.h>
-#include <gtkmm-4.0/gdkmm.h>
-#include <adwaita.h>
-#include <giomm.h> 
+
 
 Application* Application::s_Instance;
 
@@ -61,23 +55,26 @@ gboolean Application::onWindowClose(GtkWidget* widget, GdkEvent* event, gpointer
 
 void Application::onAppActivate (AdwApplication* app, gpointer user_data)
 {
-    auto builder = Gtk::Builder::create_from_resource ("/io/github/androeat/cupter/mainwindow.ui");
+    auto builder = gtk_builder_new_from_resource("/io/github/androeat/cupter/mainwindow.ui");
     Application::getApplication()->MainWindowSetup(builder);
 
     gtk_application_add_window( GTK_APPLICATION (Application::getApplication()->m_AdwApp), GTK_WINDOW( Application::getApplication()->m_MainWindow ));
 }
 
 //window creation and resize
-void Application::MainWindowSetup(Glib::RefPtr<Gtk::Builder> builder) 
+void Application::MainWindowSetup(GtkBuilder* builder) 
 {
-    GtkBuilder* c_builder = GTK_BUILDER(builder->gobj());
-    GtkWidget* main_window = GTK_WIDGET(gtk_builder_get_object(c_builder, "MainWindow"));
+    GtkWidget* main_window = GTK_WIDGET(gtk_builder_get_object(builder, "MainWindow"));
+    GtkWidget* windowbox = GTK_WIDGET( gtk_builder_get_object(builder, "WindowBox") );
     m_MainWindow = ADW_APPLICATION_WINDOW(main_window);
 
     g_signal_connect (GTK_WINDOW(m_MainWindow), "close-request", G_CALLBACK(Application::onWindowClose), NULL);
 
     int width = g_settings_get_int(m_GSettings, "window-width");
     int heigth = g_settings_get_int(m_GSettings, "window-height");
+
+    m_NavView = MainNavView::getMainNavView();
+    gtk_box_append(GTK_BOX( windowbox ), m_NavView->getWidget());
 
     gtk_window_set_default_size( GTK_WINDOW (m_MainWindow), width, heigth );
     gtk_window_present ( GTK_WINDOW (m_MainWindow) );

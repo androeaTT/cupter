@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <!-- interface-name favouritesEmpty.ui -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.4"/>
+  <object class="AdwClamp" id="FavoritessEmptyClamp">
+    <property name="child">FavoritesStatus</property>
+    <property name="maximum-size">470</property>
+    <property name="overflow">hidden</property>
+    <property name="vexpand">True</property>
+    <child>
+      <object class="AdwStatusPage" id="FavoritesStatus">
+        <property name="child">
+          <object class="GtkBox">
+            <property name="halign">center</property>
+            <property name="hexpand">True</property>
+            <property name="spacing">14</property>
+            <child>
+              <object class="GtkButton">
+                <property name="label">Add custom</property>
+                <style>
+                  <class name="opaque"/>
+                  <class name="pill"/>
+                  <class name="suggested-action"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label">Browse All</property>
+                <style>
+                  <class name="opaque"/>
+                  <class name="pill"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </property>
+        <property name="description">Favorites page needs to store your entries for quick managing. Your custom entries will automatically adds into this page. Also you can add any other entries to this page on the "All" page</property>
+        <property name="icon-name">star-filled-rounded-symbolic</property>
+        <property name="title">You haven't any favorites yet</property>
+        <property name="vexpand">True</property>
+      </object>
+    </child>
+  </object>
+</interface>

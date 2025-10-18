@@ -1,6 +1,6 @@
 //  Cupter. Desktop entries files manager
 //  Copyright (C) 2025  @androeaTT
-//  Application.h
+//  MainPage.h
 //
 //  This program is free software: you can redistribute it and/or modify
 //  it under the terms of the GNU General Public License as published by
@@ -14,33 +14,27 @@
 //  
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 #pragma once
 
-#include "ui/MainNavView.h"
-#include <CLI/CLI.hpp>
-#include <string>
-#include <iostream>
 #include <gtkmm-4.0/gtkmm.h>
-#include <gtkmm-4.0/gdkmm.h>
 #include <adwaita.h>
-#include <giomm.h> 
 
-class Application
+class HeaderBar;
+
+class MainPage
 {
 private:
-    static Application* s_Instance;
-    static void onAppActivate (AdwApplication* app, gpointer user_data);
-    static gboolean onWindowClose(GtkWidget* widget, GdkEvent* event, gpointer user_data);    
-    
-    void MainWindowSetup (GtkBuilder* builder);
-    AdwApplication* m_AdwApp;
-    AdwApplicationWindow* m_MainWindow;
-    MainNavView* m_NavView;
-    GSettings* m_GSettings;
-public:
-    static int Run (int argc, char** argv);
-    static Application* getApplication();   
+    static MainPage* s_Instance;
 
-    int Init (int argc, char** argv);
+    GtkWidget* m_Widget;
+    GtkBuilder* m_Builder;
+    GtkWidget* m_MainStack;
+    HeaderBar* m_HeaderBar;
+public:
+    static MainPage* getMainPage();
+
+    MainPage();
+    ~MainPage();
+    GtkWidget* getWidget();
+    GtkWidget* getMainStack();
 };

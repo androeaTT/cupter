@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <!-- interface-name mainPage.ui -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.6"/>
+  <object class="AdwNavigationPage" id="MainPage">
+    <property name="tag">main</property>
+    <property name="title">Main page</property>
+    <child>
+      <object class="GtkBox" id="MainPageBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwViewStack" id="MainStack">
+            <child>
+              <object class="AdwViewStackPage" id="FavoritesPage">
+                <property name="child">
+                  <object class="GtkBox" id="FavoritesBox">
+                    <property name="orientation">vertical</property>
+                  </object>
+                </property>
+                <property name="icon-name">star-filled-rounded-symbolic</property>
+                <property name="name">favorites</property>
+                <property name="title">Favorites</property>
+              </object>
+            </child>
+            <child>
+              <object class="AdwViewStackPage" id="AllPage">
+                <property name="child">
+                  <object class="GtkBox">
+                    <child>
+                      <object class="GtkCenterBox" id="AllLoadingPage">
+                        <property name="hexpand">True</property>
+                        <property name="vexpand">True</property>
+                        <child type="center">
+                          <object class="AdwSpinner"/>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkListView"/>
+                    </child>
+                  </object>
+                </property>
+                <property name="icon-name">list-compact-symbolic</property>
+                <property name="name">all</property>
+                <property name="title">All</property>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

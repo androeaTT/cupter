@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.96.1 -->
+<interface>
+  <!-- interface-name headerbar.ui -->
+  <requires lib="gtk" version="4.18"/>
+  <requires lib="libadwaita" version="1.4"/>
+  <object class="AdwHeaderBar" id="MainHeaderBar">
+    <property name="show-back-button">False</property>
+    <child type="title">
+      <object class="AdwViewSwitcher" id="HeaderStackSwitcher">
+        <property name="policy">wide</property>
+      </object>
+    </child>
+    <child type="start">
+      <object class="GtkBox">
+        <property name="spacing">10</property>
+        <child type="start">
+          <object class="GtkImage">
+            <property name="icon-name">application-x-executable</property>
+            <property name="margin-start">6</property>
+            <style>
+              <class name="lowres-icon"/>
+              <class name="icon-dropshadow"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="icon-name">list-add</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child type="end">
+      <object class="GtkBox">
+        <property name="spacing">5</property>
+        <child>
+          <object class="GtkButton">
+            <property name="icon-name">system-search</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkMenuButton">
+            <property name="icon-name">open-menu</property>
+            <property name="popover">
+              <object class="GtkPopoverMenu"/>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <style>
+      <class name="flat"/>
+    </style>
+  </object>
+</interface>

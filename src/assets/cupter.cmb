@@ -2,8 +2,11 @@
 <!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
 <!-- Created with Cambalache 0.96.1 -->
 <cambalache-project version="0.96.0" target_tk="gtk-4.0">
-  <ui filename="mainwindow.ui" sha256="e608d58bc7797109e968021dc354edbb3266db9c4dd9999e9127df0f1c6a1fc8"/>
+  <ui filename="mainwindow.ui" sha256="92272af973fe01de6790013cf4830bcfbe897e06d5f02e8c6acee96fa0c21d13"/>
   <ui filename="listEntry.ui" sha256="63034af67784c1e7636dd2181f06790bebf9ccbcf3ca54eb54b905d5326a6220"/>
-  <ui filename="favourites.ui" sha256="85f6bb4e83b2275e38877e2ad673be6c16880dd36d0406581599b61e5e4dbd40"/>
-  <ui filename="all.ui" sha256="6f450640c1c3e1e25b2a10e909ba831ad2f7a7f82487f73a86ed7d54fe43b216"/>
+  <ui filename="favouritesTab.ui" sha256="27effd353051bd9c6c62f1e413471a1dd046129de644a58c0f01b9ee320717ad"/>
+  <ui filename="allTab.ui" sha256="47c49a8057d5f8f8811289fa7cda278ba23b17f3f01ba3f9dfac9bf8764a1ddb"/>
+  <ui filename="favouritesEmpty.ui" sha256="7e7e6e5cd465b71a8e14c1b98a92f229c40d88acdfccaf27797cd0c4f8ed7df7"/>
+  <ui filename="headerbar.ui" sha256="649606fd1dd810d28072376647123a36c67d080c9539cbec7999b9077729507a"/>
+  <ui filename="mainPage.ui" sha256="e9caa414f7c4281b970aab6d0b923ed7b2ba34ee7df3b18af3a8c6dafecb5ff1"/>
 </cambalache-project>
