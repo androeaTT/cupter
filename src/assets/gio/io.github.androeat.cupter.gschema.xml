@@ -11,10 +11,10 @@
       <summary>Window height</summary>
       <description>Nah-huh</description>
     </key>
-    <key name="window-height" type="i">
-      <default>660</default>
-      <summary>Window height</summary>
-      <description>Nah-huh</description>
+    <key name="custom-entries" type="a{sv}">
+      <default>{}</default>
+      <summary>Custom entries</summary>
+      <description>Here stores all custom entries</description>
     </key>
   </schema>
 </schemalist>

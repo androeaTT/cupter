@@ -37,6 +37,7 @@ int Application::Init (int argc, char** argv)
     m_AdwApp = adw_application_new ("io.github.androeat.cupter", G_APPLICATION_DEFAULT_FLAGS);
     g_signal_connect (m_AdwApp, "activate", G_CALLBACK(Application::onAppActivate), NULL); 
     Glib::init();
+    Gio::init();
     m_GSettings = g_settings_new("io.github.androeat.cupter");
 
     return 0;

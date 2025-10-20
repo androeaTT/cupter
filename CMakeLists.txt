@@ -38,34 +38,17 @@ set_source_files_properties(
         PROPERTIES GENERATED TRUE
 )
 
-# compile schemas
-set(SCHEMA_DIR "${CMAKE_SOURCE_DIR}/src/assets/gio")
-set(SCHEMA_OUTPUT "${CMAKE_BINARY_DIR}/gschemas.compiled")
-
-file(GLOB SCHEMA_FILES "${SCHEMA_DIR}/*.gschema.xml")
-
-add_custom_command(
-    OUTPUT ${SCHEMA_OUTPUT}
-    COMMAND ${GLIB_COMPILE_SCHEMAS} ${SCHEMA_DIR}
-    DEPENDS ${SCHEMA_FILES}
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+# compile and push schemas to systemdir (i know thats shitcode but i fix it later)
+add_custom_target(schemas
+    COMMAND ${CMAKE_SOURCE_DIR}/schemasCompile.sh ${CMAKE_SOURCE_DIR}
 )
 
-set(ENV{GSETTINGS_SCHEMA_DIR} ${CMAKE_SOURCE_DIR}/src/assets/gio)
-
-add_custom_target(
-    schemas
-    DEPENDS ${SCHEMA_OUTPUT}
-)
-
-#copmpile all .cpp and .h files in src
+# copmpile all .cpp and .h files in src
 file(GLOB_RECURSE SOURCE src/*.cpp src/*.h)
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE})
 add_executable(cupter ${SOURCE} ${CMAKE_CURRENT_BINARY_DIR}/${GRESOURCE_C})
 
-add_dependencies(cupter schemas)
-
-
+add_dependencies(cupter schemas )
 
 
 # Include Gtkmm 4
